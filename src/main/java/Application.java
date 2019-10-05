@@ -34,6 +34,10 @@ public class Application {
 //       String bestWord = findBestForComputer(sample, ghostTrie);
 //       System.out.println(bestWord);
 
+//       List<String> appleWords = ghostTrie.getWordsForPrefix("apple");
+//       for(String word: appleWords)
+//           System.out.println(word);
+//
     }
 
 
