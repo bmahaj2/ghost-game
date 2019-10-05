@@ -27,40 +27,88 @@ public class Application {
         System.out.println(ghostTrie.isCompleteWord("helo"));
         System.out.println(ghostTrie.isCompleteWord("hell"));
 
-        String sample = "hel";
-       String bestWord = findBestForComputer(sample, ghostTrie );
-       System.out.println(bestWord);
+        PlayGame game = new PlayGame(ghostTrie);
+        game.startGame("");
+
+//        String sample = "sta";
+//       String bestWord = findBestForComputer(sample, ghostTrie);
+//       System.out.println(bestWord);
 
     }
+
+
 
     static String findBestForComputer(String sample, GhostTrie ghostTrie){
         List<String> prefixWords = ghostTrie.getWordsForPrefix(sample);
-        System.out.println("prefix words are:--------------------------");
-        for(String word: prefixWords) {
-            int lenDiff = word.length() - sample.length();
-            if(lenDiff % 2 == 0){
-                boolean consider = true;
-                for(int i = 1; i<= lenDiff; i++) {
-                    if (i % 2 != 0){
-                        if(ghostTrie.isCompleteWord(word.substring(0, sample.length()+i))) {
-//                          System.out.println("desired is :" + word.substring(0, sample.length() + i));
-//                          System.out.println("haha");
-                            consider = false;
-                            continue;
-                        }
-                    }
+        if(!prefixWords.isEmpty()) {
+            System.out.println("prefix words are:--------------------------");
+            int minLength = Integer.MAX_VALUE;
+            String chosenWord = "";
+            for (String word : prefixWords) {
+                int lenDiff = word.length() - sample.length();
+                if (lenDiff % 2 == 0) {
+                    if (word.length() < minLength)
+                        minLength = word.length();
+                    chosenWord = word;
+//                boolean consider = true;
+//                for(int i = 1; i<= lenDiff; i++) {
+//                    if (i % 2 != 0){
+//                        if(ghostTrie.isCompleteWord(word.substring(0, sample.length()+i))) {
+////                          System.out.println("desired is :" + word.substring(0, sample.length() + i));
+////                          System.out.println("haha");
+//                            consider = false;
+//                            continue;
+//                        }
+//                    }
+//                }
+//                if(consider)
+//                    return word;
                 }
-                if(consider)
-                    return word;
+                if (!chosenWord.equals(""))
+                    return chosenWord;
+
             }
 
+            for (String word : prefixWords) {
+                if (!ghostTrie.isCompleteWord(word.substring(0, sample.length() + 1)))
+                    return word;
+            }
+            return prefixWords.get(0);
         }
-
-        for(String word: prefixWords) {
-          if(! ghostTrie.isCompleteWord(word.substring(0, sample.length()+1)))
-              return word;
-        }
-        return prefixWords.get(0);
+        return "NoMoreWords";
     }
+
+
+
+
+//    static String findBestForComputer(String sample, GhostTrie ghostTrie){
+//        List<String> prefixWords = ghostTrie.getWordsForPrefix(sample);
+//        System.out.println("prefix words are:--------------------------");
+//        for(String word: prefixWords) {
+//            int lenDiff = word.length() - sample.length();
+//            if(lenDiff % 2 == 0){
+//                boolean consider = true;
+//                for(int i = 1; i<= lenDiff; i++) {
+//                    if (i % 2 != 0){
+//                        if(ghostTrie.isCompleteWord(word.substring(0, sample.length()+i))) {
+////                          System.out.println("desired is :" + word.substring(0, sample.length() + i));
+////                          System.out.println("haha");
+//                            consider = false;
+//                            continue;
+//                        }
+//                    }
+//                }
+//                if(consider)
+//                    return word;
+//            }
+//
+//        }
+//
+//        for(String word: prefixWords) {
+//          if(! ghostTrie.isCompleteWord(word.substring(0, sample.length()+1)))
+//              return word;
+//        }
+//        return prefixWords.get(0);
+//    }
 
 }

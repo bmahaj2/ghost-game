@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e58d17e8-ec6d-4371-9958-945feeba53a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GhostTrie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PlayGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,13 +20,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+            <state relative-caret-position="364">
+              <caret line="41" column="66" lean-forward="true" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/PlayGame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+              <folding>
+                <element signature="e#618#619#0" expanded="true" />
+                <element signature="e#650#651#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/GhostTrie.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
-              <caret line="51" column="29" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
+              <caret line="51" column="52" lean-forward="true" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="52" />
               <folding>
                 <element signature="e#0#1966#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -73,6 +86,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>staab</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -81,10 +99,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/GhostTrie.java" />
         <option value="$PROJECT_DIR$/src/main/java/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PlayGame.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="842" />
@@ -120,6 +139,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ghost-game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ghost-game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -210,7 +236,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="842" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="847" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
@@ -224,11 +250,11 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.3287483" />
+      <window_info anchor="bottom" id="Messages" weight="0.32786885" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33287483" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39889959" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329235" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.397541" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -241,6 +267,30 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Application.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/PlayGame.java</url>
+          <line>12</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/PlayGame.java</url>
+          <line>22</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/Trie.java">
@@ -257,10 +307,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/dictionary.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="188300" column="5" selection-start-line="188300" selection-end-line="188300" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GhostTrie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="51" column="29" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
+          <caret line="51" column="52" lean-forward="true" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="52" />
           <folding>
             <element signature="e#0#1966#0" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -271,10 +328,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+        <state relative-caret-position="364">
+          <caret line="41" column="66" lean-forward="true" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PlayGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding>
+            <element signature="e#618#619#0" expanded="true" />
+            <element signature="e#650#651#0" expanded="true" />
           </folding>
         </state>
       </provider>
