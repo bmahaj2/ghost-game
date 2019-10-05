@@ -91,4 +91,32 @@ public class GhostTrie {
             findAllChildWords(n.children.get(c), results);
         }
     }
+
+    public String getFirstPrefixWord(String pre) {
+        String results = "";
+
+        // Iterate to the end of the prefix
+        Node curr = trie;
+        for (char c : pre.toCharArray()) {
+            if (curr.children.containsKey(c)) {
+                curr = curr.children.get(c);
+            } else {
+                return results;
+            }
+        }
+
+        // At the end of the prefix, find all child words
+        results = findFirstChildNode(curr, results);
+        return results;
+    }
+
+    private String findFirstChildNode(Node n, String results) {
+        if (n.isWord) {
+            return n.prefix;
+        }
+        for (Character c : n.children.keySet()) {
+            results = findFirstChildNode(n.children.get(c), results);
+        }
+        return results;
+    }
 }

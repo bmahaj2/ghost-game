@@ -61,17 +61,77 @@ public class PlayGame {
     }
 
     public String computerMove(String prefix){
-        return prefix;
+        if(ghostTrie.isCompleteWord(prefix)){
+            System.out.println("Player 1 formed the word "+ prefix + " that exists in dictionary. Computer won.");
+            System.exit(0);
+        }
+        String prefixWord = ghostTrie.getFirstPrefixWord(prefix);
+        if(prefixWord.equals("")){
+//            System.out.println("No word with "+ prefix + " exists");
+            challangePlayerOne(prefix);
+        }
+        String comWord = findBestForComputer(prefix, ghostTrie);
+        System.out.println("Word formed by computer is: "+ comWord);
+//        return prefix;
+        return comWord;
     }
 
-    public boolean challangeOpponent(String prefix){
-        List<String> prefixList = ghostTrie.getWordsForPrefix(prefix);
-        if(prefixList.isEmpty())
-                return true;
-        return false;
-//        if(ghostTrie.getWordsForPrefix(prefix)) {
-//            return true;
-//        }
-//        return false;
+
+    static String findBestForComputer(String sample, GhostTrie ghostTrie){
+        List<String> prefixWords = ghostTrie.getWordsForPrefix(sample);
+        if(!prefixWords.isEmpty()) {
+            System.out.println("prefix words are:--------------------------");
+            int minLength = Integer.MAX_VALUE;
+            String chosenWord = "";
+            for (String word : prefixWords) {
+                int lenDiff = word.length() - sample.length();
+                if (lenDiff % 2 == 0) {
+                    if (word.length() < minLength)
+                        minLength = word.length();
+                    chosenWord = word;
+//                boolean consider = true;
+//                for(int i = 1; i<= lenDiff; i++) {
+//                    if (i % 2 != 0){
+//                        if(ghostTrie.isCompleteWord(word.substring(0, sample.length()+i))) {
+////                          System.out.println("desired is :" + word.substring(0, sample.length() + i));
+////                          System.out.println("haha");
+//                            consider = false;
+//                            continue;
+//                        }
+//                    }
+//                }
+//                if(consider)
+//                    return word;
+                }
+                if (!chosenWord.equals(""))
+                    return chosenWord.substring(0, sample.length()+1);
+
+            }
+
+            for (String word : prefixWords) {
+                if (!ghostTrie.isCompleteWord(word.substring(0, sample.length() + 1)))
+                    return word;
+            }
+            return prefixWords.get(0);
+        }
+        return "NoMoreWords";
     }
+
+    public void challangePlayerOne(String prefix){
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("You have been challanged by computer. Enter correct word starting with prefix "+ prefix);
+        String playerInput = myObj.nextLine().toLowerCase();
+        if (playerInput.matches("^[a-zA-Z]*$") && playerInput.startsWith(prefix) && ghostTrie.isCompleteWord(playerInput) ){
+//           if( playerInput.startsWith(prefix) && ghostTrie.isCompleteWord(playerInput)){
+               System.out.println("Correct word. Player1 won");
+//           }
+//           else
+//               System.out.println("Incorrect word. Computer won");
+        }
+        else
+            System.out.println("Incorrect word. Computer won");
+        System.exit(0);
+
+    }
+
 }
