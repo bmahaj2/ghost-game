@@ -14,7 +14,7 @@ public class PlayGame {
     }
 
     public void startGame(String prefix){
-        while(!gameOver) {
+        while(true) {
             prefix = playerOneMove(prefix);
             prefix = computerMove(prefix);
         }
@@ -145,7 +145,7 @@ public class PlayGame {
 
     static String findBestWordForComputer(String sample, GhostTrie ghostTrie) {
         List<String> prefixWords = ghostTrie.getWordsForPrefix(sample);
-        System.out.println("prefix words are:--------------------------");
+//        System.out.println("prefix words are:--------------------------");
         if (!prefixWords.isEmpty()) {
             for (String word : prefixWords) {
                 int lenDiff = word.length() - sample.length();
