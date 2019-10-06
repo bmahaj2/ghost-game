@@ -7,7 +7,6 @@ public class Application {
         Set<String> outputSet =  dic.createDictionarySet();
 //        for(String item: outputSet)
 //            System.out.println(item);
-        System.out.println(outputSet.size());
         System.out.println("Starting to insert dictionary items in Trie -----------------------------------------");
         /////////////////////////////////////////////////////////////////////////
 //        Trie trieObj = new Trie();
@@ -24,8 +23,7 @@ public class Application {
 //        System.out.println(trieObj.startsWith("cephalobrad"));
         /////////////////////////////////////////////////////////////////////////
         GhostTrie ghostTrie = new GhostTrie(outputSet);
-        System.out.println(ghostTrie.isCompleteWord("helo"));
-        System.out.println(ghostTrie.isCompleteWord("hell"));
+        System.out.println(outputSet.size()+" dictionary items inserted in ghostTrie");
 
         PlayGame game = new PlayGame(ghostTrie);
         game.startGame("");
