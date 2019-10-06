@@ -15,7 +15,6 @@ public class Dictionary {
     }
 
     public Set<String> createDictionarySet() {
-
         try {
             ClassLoader classLoader = ClassLoader.getSystemClassLoader();
             File file = new File(classLoader.getResource(fileName).getFile());

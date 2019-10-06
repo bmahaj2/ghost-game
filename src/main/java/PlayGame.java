@@ -1,9 +1,9 @@
 import java.util.List;
 import java.util.Scanner;
 
-
 public class PlayGame {
 
+    private static final String No_MORE_WORDS = "NoMoreWords";
     GhostTrie ghostTrie;
 
     public PlayGame(GhostTrie ghostTrie){
@@ -20,7 +20,7 @@ public class PlayGame {
     public String playerOneMove(String prefix){
         System.out.println("Current word is " + prefix);
         Scanner myObj = new Scanner(System.in);
-        System.out.println("Enter a character [a-z] or 'challenge' to challenge the computer");
+        System.out.println("Player 1 enter a character [a-z] or 'challenge' to challenge the computer");
         String playerInput = myObj.nextLine().toLowerCase();
 
         if(playerInput.equals("challenge")) {
@@ -58,38 +58,10 @@ public class PlayGame {
             challengePlayerOne(prefix);
         }
         String comWord = findBestWordForComputer(prefix, ghostTrie);
-        if(comWord.equals("NoMoreWords"))
+        if(comWord.equals(No_MORE_WORDS))
             System.out.println("Computer admits defeat. Player1 won");
         System.out.println("Word formed by computer is: "+ comWord);
         return comWord;
-    }
-
-
-    static String findBestForComputer(String sample, GhostTrie ghostTrie){
-        List<String> prefixWords = ghostTrie.getWordsForPrefix(sample);
-        if(!prefixWords.isEmpty()) {
-            System.out.println("prefix words are:--------------------------");
-            int minLength = Integer.MAX_VALUE;
-            String chosenWord = "";
-            for (String word : prefixWords) {
-                int lenDiff = word.length() - sample.length();
-                if (lenDiff % 2 == 0) {
-                    if (word.length() < minLength) {
-                        minLength = word.length();
-                        chosenWord = word;
-                    }
-                }
-            }
-            if (!chosenWord.equals(""))
-                return chosenWord.substring(0, sample.length()+1);
-
-            for (String word : prefixWords) {
-                if (!ghostTrie.isCompleteWord(word.substring(0, sample.length() + 1)))
-                    return word;
-            }
-            return prefixWords.get(0);
-        }
-        return "NoMoreWords";
     }
 
     public void challengePlayerOne(String prefix){
@@ -130,7 +102,7 @@ public class PlayGame {
             }
             return prefixWords.get(0);
         }
-        return "NoMoreWords";
+        return No_MORE_WORDS;
     }
 
 }
