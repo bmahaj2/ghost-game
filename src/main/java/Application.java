@@ -85,34 +85,38 @@ public class Application {
 
 
 
-//    static String findBestForComputer(String sample, GhostTrie ghostTrie){
-//        List<String> prefixWords = ghostTrie.getWordsForPrefix(sample);
-//        System.out.println("prefix words are:--------------------------");
-//        for(String word: prefixWords) {
-//            int lenDiff = word.length() - sample.length();
-//            if(lenDiff % 2 == 0){
-//                boolean consider = true;
-//                for(int i = 1; i<= lenDiff; i++) {
-//                    if (i % 2 != 0){
-//                        if(ghostTrie.isCompleteWord(word.substring(0, sample.length()+i))) {
-////                          System.out.println("desired is :" + word.substring(0, sample.length() + i));
-////                          System.out.println("haha");
-//                            consider = false;
-//                            continue;
-//                        }
-//                    }
-//                }
-//                if(consider)
-//                    return word;
-//            }
-//
-//        }
-//
-//        for(String word: prefixWords) {
-//          if(! ghostTrie.isCompleteWord(word.substring(0, sample.length()+1)))
-//              return word;
-//        }
-//        return prefixWords.get(0);
-//    }
+    static String findBestForComputer2(String sample, GhostTrie ghostTrie) {
+        List<String> prefixWords = ghostTrie.getWordsForPrefix(sample);
+        System.out.println("prefix words are:--------------------------");
+        if (!prefixWords.isEmpty()) {
+            for (String word : prefixWords) {
+                int lenDiff = word.length() - sample.length();
+                if (lenDiff % 2 == 0) {
+                    boolean consider = true;
+                    for (int i = 1; i <= lenDiff; i++) {
+                        if (i % 2 != 0) {
+                            if (ghostTrie.isCompleteWord(word.substring(0, sample.length() + i))) {
+//                          System.out.println("desired is :" + word.substring(0, sample.length() + i));
+//                          System.out.println("haha");
+                                consider = false;
+                                continue;
+                            }
+                        }
+                    }
+                    if (consider)
+                        return word;
+                }
+
+            }
+
+
+            for (String word : prefixWords) {
+                if (!ghostTrie.isCompleteWord(word.substring(0, sample.length() + 1)))
+                    return word;
+            }
+            return prefixWords.get(0);
+        }
+        return "NoMoreWords";
+    }
 
 }
