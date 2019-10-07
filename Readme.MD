@@ -18,7 +18,8 @@ Ghost-game
     (ghost-game/src/main/java/Application.java)
 
 * Basic Assumptions
-    1) The game only considers words of the dictionary whose length is greate than 2 and adds them to a Trie.
+    1) The game only considers words of the dictionary whose length is greater than 2 and adds them to a Trie.
+    2) Game is played between a human player and computer.
 
-* Data structures and Winning strategy
-    I have used Trie data structure to create a dictionary. The game is played between human and a computer.
+* Data structures
+    I have used Trie data structure to create a dictionary.

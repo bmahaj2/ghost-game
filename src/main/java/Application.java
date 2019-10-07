@@ -5,7 +5,7 @@ import java.util.Set;
 
 /*
  * The main entry point of the project.
- * It reads words from the file, adds them to a Trie an then starts the game
+ * It reads words from the file, adds them to a Trie and then chooses player1 or computer randomly to start the game
  */
 
 @Slf4j
@@ -19,7 +19,8 @@ public class Application {
         GhostTrie ghostTrie = new GhostTrie(outputSet);
         log.info("Total number of dictionary items inserted in ghostTrie are {}", outputSet.size());
         PlayGame game = new PlayGame(ghostTrie);
-        game.startGame("");
+        int choosePlayer = game.getRandom(10);
+        game.startGame("", choosePlayer);
     }
 
 }
