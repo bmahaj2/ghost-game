@@ -28,3 +28,11 @@ Ghost-game
 * Data structures:
 
     I have used Trie data structure to create a dictionary.
+
+* Winning Strategy
+
+    Both the players aim being to avoid completing an actual word. Computer selects a character that maximises its chances of winning.
+    Computer looks for a word that ends when player1 makes a move. For e.g. Computer selects a word yawnful, such that player1 enters the last l.
+    But while forming the word yawnful, the game has to go through yawn. Computer needs to make sure that its not the one who's entering n in yawn.
+    If computer is the one entering n, then it will discard the word yawnful.
+
