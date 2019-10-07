@@ -9,7 +9,7 @@ public class GhostTrie {
         String prefix;
         HashMap<Character, Node> children;
 
-        // Does this node represent the last character in a word?
+        // Boolean value to indicate if this node represent the last character in a word
         boolean isWord;
 
         private Node(String prefix) {
@@ -45,6 +45,10 @@ public class GhostTrie {
         }
     }
 
+    /*
+     * Check if inputWord is a complete word.
+     * i.e. check if isWord field for the current node is true.
+     */
     public boolean isCompleteWord(String inputWord){
         Node curr = trie;
         for (char c : inputWord.toCharArray()) {
@@ -88,6 +92,7 @@ public class GhostTrie {
         }
     }
 
+    // Find first word in trie that start with prefix
     public String getFirstPrefixWord(String pre) {
         String results = "";
 
@@ -101,11 +106,12 @@ public class GhostTrie {
             }
         }
 
-        // At the end of the prefix, find all child words
+        // At the end of the prefix, find first child words
         results = findFirstChildNode(curr, results);
         return results;
     }
 
+    // Recursively find first child word
     private String findFirstChildNode(Node n, String results) {
         if (n.isWord) {
             return n.prefix;

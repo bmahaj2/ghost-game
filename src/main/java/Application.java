@@ -2,6 +2,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.BasicConfigurator;
 import java.util.Set;
 
+
+/*
+ * The main entry point of the project.
+ * It reads words from the file, adds them to a Trie an then starts the game
+ */
+
 @Slf4j
 public class Application {
     public static void main(String[] args){
