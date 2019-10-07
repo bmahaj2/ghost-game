@@ -87,6 +87,8 @@ public class PlayGame {
 
     // Computer makes a move.
     public String computerMove(String prefix){
+
+        // If computer is the first one to make a move, then select a random character between a-z
         if(prefix.equals("")){
             Random rnd = new Random();
             char c = (char) (rnd.nextInt(26) + 'a');
