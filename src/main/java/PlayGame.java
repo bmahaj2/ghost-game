@@ -67,10 +67,7 @@ public class PlayGame {
         return playerOneMove(prefix);
     }
 
-    /*
-     * Computer makes a move.
-     */
-
+    // Computer makes a move.
     public String computerMove(String prefix){
 
         // Computer checks if prefix is already a word. In that case player1 already formed a word and Computer wins.

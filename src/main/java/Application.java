@@ -15,7 +15,7 @@ public class Application {
         BasicConfigurator.configure();
         Dictionary dic = new Dictionary();
         Set<String> outputSet =  dic.createDictionarySet();
-        log.info("Starting to insert dictionary items in Trie -----------------------------------------");
+        log.info("Starting to insert dictionary items in Trie");
         GhostTrie ghostTrie = new GhostTrie(outputSet);
         log.info("Total number of dictionary items inserted in ghostTrie are {}", outputSet.size());
         PlayGame game = new PlayGame(ghostTrie);

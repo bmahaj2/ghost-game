@@ -1,6 +1,0 @@
-hello
-to
-an
-and
-and
-format
