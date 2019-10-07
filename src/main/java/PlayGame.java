@@ -13,14 +13,29 @@ public class PlayGame {
 
     /*
      * The game continues until player1 or computer loses and in that case the program terminates.
-     * In the below implementation player1 makes the first move and computer makes the second move.
-     * We can reverse playerOneMove(prefix) and ComputerMove(prefix) to make computer go first and player1 go second.
+     * In the below implementation player1 or computer is chosen randomly to make the first move
      */
-    public void startGame(String prefix){
-        while(true) {
-            prefix = playerOneMove(prefix);
-            prefix = computerMove(prefix);
+    public void startGame(String prefix, int choosePlayer){
+        if(choosePlayer == 0) {
+            while (true) {
+                prefix = playerOneMove(prefix);
+                prefix = computerMove(prefix);
+            }
         }
+        else {
+            while (true) {
+                prefix = computerMove(prefix);
+                prefix = playerOneMove(prefix);
+            }
+        }
+    }
+
+    // returns 0 or 1 randomly which decides the starting player
+    public  int getRandom(int max){
+        int val = (int) (Math.random()*max);
+        if (val < 5)
+            return 0;
+        return 1;
     }
 
     /*
