@@ -18,12 +18,14 @@ public class PlayGame {
      */
     public void startGame(String prefix, int choosePlayer){
         if(choosePlayer == 0) {
+            System.out.println("Player1 has been randomly chosen to move first");
             while (true) {
                 prefix = playerOneMove(prefix);
                 prefix = computerMove(prefix);
             }
         }
         else {
+            System.out.println("computer has been randomly chosen to move first");
             while (true) {
                 prefix = computerMove(prefix);
                 prefix = playerOneMove(prefix);
