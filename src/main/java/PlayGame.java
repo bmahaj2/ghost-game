@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class PlayGame {
@@ -84,6 +85,11 @@ public class PlayGame {
 
     // Computer makes a move.
     public String computerMove(String prefix){
+        if(prefix.equals("")){
+            Random rnd = new Random();
+            char c = (char) (rnd.nextInt(26) + 'a');
+            return prefix+c;
+        }
 
         // Computer checks if prefix is already a word. In that case player1 already formed a word and Computer wins.
         if(ghostTrie.isCompleteWord(prefix)){
