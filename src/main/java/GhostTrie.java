@@ -6,11 +6,11 @@ import java.util.Set;
 public class GhostTrie {
     // Trie node class
     private class Node {
-        String prefix;
-        HashMap<Character, Node> children;
+        private final String prefix;
+        private final HashMap<Character, Node> children;
 
         // Boolean value to indicate if this node represent the last character in a word
-        boolean isWord;
+        private boolean isWord;
 
         private Node(String prefix) {
             this.prefix = prefix;

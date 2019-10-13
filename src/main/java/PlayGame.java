@@ -6,7 +6,7 @@ public class PlayGame {
 
     private static final String NO_MORE_WORDS = "NoMoreWords";
     private static final String INPUT_CHALLENGE = "challenge";
-    GhostTrie ghostTrie;
+    private final GhostTrie ghostTrie;
 
     public PlayGame(GhostTrie ghostTrie){
         this.ghostTrie = ghostTrie;
