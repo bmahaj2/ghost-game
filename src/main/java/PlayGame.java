@@ -103,7 +103,7 @@ public class PlayGame {
 
         /*
          * Computer checks if the player is trying to bluff. Computer finds the first complete word
-         * that can be formed using the prefix formed by player1. If not word can be found then the computer
+         * that can be formed using the prefix formed by player1. If no word can be found then the computer
          * challenges the player1.
          */
         String prefixWord = ghostTrie.getFirstPrefixWord(prefix);
